@@ -39,7 +39,7 @@ module.exports = {
       eslint-plugin-markdown only finds javascript code block snippet.
       For specific spec, refer to https://github.com/eslint/eslint-plugin-markdown
       */
-      files: ['**/*.js', '**/*.md'],
+      files: ['**/*.js'],
       ...common,
     },
     {
