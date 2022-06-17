@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@realiotech/address-generator": [
+        "./packages/address-generator"
+      ]
+    }
+  }
+}

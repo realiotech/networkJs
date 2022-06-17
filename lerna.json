@@ -1,0 +1,15 @@
+{
+  "npmClient": "npm",
+  "name": "networkjs",
+  "packages": [
+    "packages/*"
+  ],
+  "ignoreChanges": [
+    "**/CHANGELOG.md",
+    "**/node_modules/**",
+    "**/package.json",
+    "**/*.md"
+  ],
+  "version": "independent",
+  "useWorkspaces": true
+}
