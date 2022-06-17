@@ -31,5 +31,6 @@
     "crypto-addr-codec": "^0.1.7",
     "link-module-alias": "^1.2.0",
     "shx": "^0.3.4"
-  }
+  },
+  "gitHead": "7a633875a763a745ee5b7e37702c726e40ced2c7"
 }
