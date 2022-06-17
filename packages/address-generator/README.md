@@ -14,61 +14,53 @@ npm install @realiotech/address-generator
 ### Generate
 
 ``` ts
-import {generateMnemonic} from "@realiotech/address-generator"
+import {generateWallet} "@realiotech/address-generator"
 
-let mnemonic = generateMnemonic()
-// "produce alley citizen bone enact settle hedgehog common plate dwarf lady someone"
+let wallet = generateWallet()
+{
+  realioAddress: 'realio1wvu02n2h8d62mmqc4n3paquml09hae6sdnlu6m',
+  ethAddress: '0x7338f54D573b74AdeC18AcE21e839bfbCb7Ee750',
+  mnemonic: 'lumber flight plunge wait repair knee year deer chuckle cherry involve start'
+}
 
-let address = ethermintToEth("ethm1uttpuj0l32whynx9f5ecmqrklpu2c6m3973048")
-// "0xe2D61e49ff8a9d724CC54d338D8076F878aC6b71"
 ```
 
 
 ### Converter
 
 ``` ts
-import {ethToEthermint, ethermintToEth} from "@tharsis/address-converter"
+import {realioNetworkToEth, ethToRealionetwork} from "@realiotech/address-generator"
 
-let address = ethToEthermint("0xe2D61e49ff8a9d724CC54d338D8076F878aC6b71")
-// "ethm1uttpuj0l32whynx9f5ecmqrklpu2c6m3973048"
+let address = realioNetworkToEth("realio1wvu02n2h8d62mmqc4n3paquml09hae6sdnlu6m")
+// "0x7338f54D573b74AdeC18AcE21e839bfbCb7Ee750"
 
-let address = ethermintToEth("ethm1uttpuj0l32whynx9f5ecmqrklpu2c6m3973048")
-// "0xe2D61e49ff8a9d724CC54d338D8076F878aC6b71"
+let address = ethToRealionetwork("0x7338f54D573b74AdeC18AcE21e839bfbCb7Ee750")
+// "realio1wvu02n2h8d62mmqc4n3paquml09hae6sdnlu6m"
 ```
 
 ### Decoders
 
 ``` ts
-import {ETH, ETHERMINT} from "@tharsis/address-converter"
-let hex = ETH.decoder("0xe2D61e49ff8a9d724CC54d338D8076F878aC6b71")
-// hex.toString('hex') === "e2d61e49ff8a9d724cc54d338d8076f878ac6b71"
+import {ETH, REALIONETWORK} from "@realiotech/address-generator"
+let hex = ETH.decoder("0x7338f54D573b74AdeC18AcE21e839bfbCb7Ee750")
+// hex.toString('hex') === "7338f54d573b74adec18ace21e839bfbcb7ee750"
 
-hex = ETHERMINT.decoder("ethm1uttpuj0l32whynx9f5ecmqrklpu2c6m3973048")
-// hex.toString('hex') === "e2d61e49ff8a9d724cc54d338d8076f878ac6b71"
+hex = REALIONETWORK.decoder("realio1wvu02n2h8d62mmqc4n3paquml09hae6sdnlu6m")
+// hex.toString('hex') === "7338f54d573b74adec18ace21e839bfbcb7ee750"
 ```
 
 ### Encoders
 
 ``` ts
-import {ETH, ETHERMINT} from "@tharsis/address-converter"
-let address = ETH.encoder(Buffer.from("e2d61e49ff8a9d724cc54d338d8076f878ac6b71","hex"))
-// address === "0xe2D61e49ff8a9d724CC54d338D8076F878aC6b71"
+import {ETH, REALIONETWORK} from "@realiotech/address-generator"
+let address = ETH.encoder(Buffer.from("7338f54D573b74AdeC18AcE21e839bfbCb7Ee750","hex"))
+// address === "0x7338f54D573b74AdeC18AcE21e839bfbCb7Ee750"
 
-address = ETHERMINT.encoder(Buffer.from("e2d61e49ff8a9d724cc54d338d8076f878ac6b71","hex"))
-// address === "ethm1uttpuj0l32whynx9f5ecmqrklpu2c6m3973048"
+address = REALIONETWORK.encoder(Buffer.from("7338f54D573b74AdeC18AcE21e839bfbCb7Ee750","hex"))
+// address === "realio1wvu02n2h8d62mmqc4n3paquml09hae6sdnlu6m"
 ```
 
-### EVMOS support
 
-```ts
-import {ethToEvmos, evmosToEth} from "@tharsis/address-converter"
-
-let address = ethToEvmos("0x14574a6DFF2Ddf9e07828b4345d3040919AF5652")
-// "evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw"
-
-let address = evmosToEth("evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw")
-// "0x14574a6DFF2Ddf9e07828b4345d3040919AF5652"
-```
 
 ## Reference
 
