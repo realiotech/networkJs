@@ -23,7 +23,7 @@
     "lerna:publish": "lerna publish from-package",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "lint": "eslint -c './.eslintrc.js' './packages/**/*.{ts,js}'",
-    "format": "yarn lint --fix",
+    "format": "eslint --fix -c './.eslintrc.js' './packages/**/*.{ts,js}'",
     "lerna": "lerna"
   },
   "devDependencies": {
