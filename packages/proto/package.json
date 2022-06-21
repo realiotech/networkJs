@@ -38,5 +38,6 @@
     "link-module-alias": "^1.2.0",
     "sha3": "^2.1.4",
     "shx": "^0.3.4"
-  }
+  },
+  "gitHead": "2c8e25bb4feda195ae8e9d11b77c94ad7f4a2c98"
 }
