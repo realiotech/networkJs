@@ -3,15 +3,19 @@ import {
   REALIONETWORK,
   ethToRealionetwork,
   realioNetworkToEth,
-  generateWallet
+  generateWallet,
 } from '../src'
 
 describe('address generator tests', () => {
   it('generator', () => {
     // ETH
-    let generated = generateWallet()
-    expect(Object.keys(generated)).toStrictEqual(['realioAddress','ethAddress', 'mnemonic'])
-    expect(generated.realioAddress.startsWith('realio'))
+    const generated = generateWallet()
+    expect(Object.keys(generated)).toStrictEqual([
+      'realioAddress',
+      'ethAddress',
+      'mnemonic',
+    ])
+    expect(generated.realioAddress.startsWith('realio')).toBe(true)
   })
 
   it('decoders', () => {
@@ -38,11 +42,15 @@ describe('address generator tests', () => {
 
   it('converters', () => {
     // ETH
-    let address = ethToRealionetwork('0x7338f54D573b74AdeC18AcE21e839bfbCb7Ee750')
+    let address = ethToRealionetwork(
+      '0x7338f54D573b74AdeC18AcE21e839bfbCb7Ee750',
+    )
     expect(address).toBe('realio1wvu02n2h8d62mmqc4n3paquml09hae6sdnlu6m')
 
     // REALIONETWORK
-    address = realioNetworkToEth('realio1wvu02n2h8d62mmqc4n3paquml09hae6sdnlu6m')
+    address = realioNetworkToEth(
+      'realio1wvu02n2h8d62mmqc4n3paquml09hae6sdnlu6m',
+    )
     expect(address).toBe('0x7338f54D573b74AdeC18AcE21e839bfbCb7Ee750')
   })
 })

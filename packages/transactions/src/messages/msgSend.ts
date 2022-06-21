@@ -3,7 +3,6 @@ import {
   createTransaction,
 } from '@realiotech/proto'
 
-
 import { Chain, Fee, Sender } from './common'
 
 export interface MessageSendParams {
@@ -19,7 +18,6 @@ export function createMessageSend(
   memo: string,
   params: MessageSendParams,
 ) {
-
   // Cosmos
   const msgSend = protoMsgSend(
     sender.accountAddress,
@@ -41,6 +39,6 @@ export function createMessageSend(
 
   return {
     signDirect: tx.signDirect,
-    legacyAmino: tx.legacyAmino
+    legacyAmino: tx.legacyAmino,
   }
 }

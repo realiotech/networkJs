@@ -52,13 +52,12 @@ export function createSignerInfo(
   sequence: number,
   mode: number,
 ) {
-
-  let pubkey:MessageGenerated= {
-      message: new eth.ethermint.crypto.v1.ethsecp256k1.PubKey({
-        key: publicKey,
-      }),
-      path: 'ethermint.crypto.v1.ethsecp256k1.PubKey',
-    }
+  const pubkey: MessageGenerated = {
+    message: new eth.ethermint.crypto.v1.ethsecp256k1.PubKey({
+      key: publicKey,
+    }),
+    path: 'ethermint.crypto.v1.ethsecp256k1.PubKey',
+  }
 
   const signerInfo = new tx.cosmos.tx.v1beta1.SignerInfo({
     public_key: createAnyMessage(pubkey),
