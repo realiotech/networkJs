@@ -1,6 +1,6 @@
 {
   "name": "@realiotech/proto",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Protobuf files for RealioNetwork",
   "license": "MIT",
   "eslintIgnore": [
