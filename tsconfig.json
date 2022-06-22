@@ -3,9 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@realiotech/address-generator": [
-        "./packages/address-generator"
-      ]
+      "@realiotech/address-generator": ["packages/address-generator/*"],
+      "@realiotech/proto": ["packages/proto/*"],
+      "@realiotech/transactions": ["packages/transactions/*"]
     }
   }
 }
