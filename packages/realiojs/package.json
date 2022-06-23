@@ -1,5 +1,5 @@
 {
-  "name": "realiojs",
+  "name": "@realiotech/realiojs",
   "description": "JS and TS libs for Realio Network",
   "version": "0.1.0",
   "license": "MIT",
