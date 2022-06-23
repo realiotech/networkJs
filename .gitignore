@@ -2,6 +2,7 @@
 node_modules
 reports
 junit.xml
+coverage
 dist
 .build-cache
 .DS_STORE
