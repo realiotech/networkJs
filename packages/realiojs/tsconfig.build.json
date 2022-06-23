@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+  },
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "references": [
+    {"path": "../address-generator/tsconfig.build.json"},
+    {"path": "../proto/tsconfig.build.json"},
+    {"path": "../provider/tsconfig.build.json"},
+    {"path": "../transactions/tsconfig.build.json"},
+  ]
+}

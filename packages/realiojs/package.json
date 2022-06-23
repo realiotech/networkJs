@@ -1,0 +1,30 @@
+{
+  "name": "realiojs",
+  "description": "JS and TS libs for Realio Network",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "_moduleAliases": {
+    "~realiojs": "dist"
+  },
+  "scripts": {
+    "postinstall": "shx mkdir -p dist && link-module-alias",
+    "build": "tsc --build tsconfig.build.json && link-module-alias",
+    "clean": "tsc --build tsconfig.build.json --clean  && shx rm -rf coverage *.log junit.xml dist && jest --clearCache",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "@realiotech/address-generator": "^0.1.0",
+    "@realiotech/proto": "^0.1.0",
+    "@realiotech/provider": "^0.1.0",
+    "@realiotech/transactions": "^0.1.0",
+    "@types/node": "^17.0.21",
+    "link-module-alias": "^1.2.0",
+    "shx": "^0.3.4"
+  }
+}
