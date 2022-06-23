@@ -1,5 +1,5 @@
 {
-  "name": "@realiotech/networkjs",
+  "name": "@realiotech/realiojs",
   "version": "0.1.0",
   "description": "Js library for Realio Network",
   "main": "index.js",
@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/realiotech/networkJs.git"
+    "url": "git+https://github.com/realiotech/realiojs.git"
   },
-  "homepage": "https://github.com/realiotech/networkJs#readme",
+  "homepage": "https://github.com/realiotech/realiojs#readme",
   "workspaces": {
     "packages": [
       "packages/*"

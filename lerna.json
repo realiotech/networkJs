@@ -1,6 +1,6 @@
 {
   "npmClient": "yarn",
-  "name": "networkjs",
+  "name": "realiojs",
   "packages": [
     "packages/*"
   ],
