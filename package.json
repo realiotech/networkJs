@@ -26,6 +26,7 @@
     "patch": "lerna version patch",
     "clean": "lerna run --parallel clean && shx rm -rf .build-cache *.log coverage junit.xml",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "coverage": "jest --coverage",
     "lint": "eslint -c './.eslintrc.js' './packages/**/*.{ts,js}'",
     "format": "eslint --fix -c './.eslintrc.js' './packages/**/*.{ts,js}'",
     "lerna": "lerna"
