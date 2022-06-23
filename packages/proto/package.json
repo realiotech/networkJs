@@ -1,6 +1,6 @@
 {
   "name": "@realiotech/proto",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Protobuf files for RealioNetwork",
   "license": "MIT",
   "eslintIgnore": [
@@ -32,5 +32,5 @@
     "sha3": "^2.1.4",
     "shx": "^0.3.4"
   },
-  "gitHead": "72227017862d4d49f96607d05dd7502f61e93347"
+  "gitHead": "6cbd510c372b9212b92a4f425a1a81d59c6e4b2b"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@realiotech/address-generator",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Exposes functionality to generate Realio Network addresses and convert between `ETH` address and `ethsecp256k1`/`realio` addresses.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -25,5 +25,5 @@
     "link-module-alias": "^1.2.0",
     "shx": "^0.3.4"
   },
-  "gitHead": "72227017862d4d49f96607d05dd7502f61e93347"
+  "gitHead": "6cbd510c372b9212b92a4f425a1a81d59c6e4b2b"
 }
