@@ -1,20 +1,20 @@
-import { createMsgSend } from '../../src/messages/msgSend'
+import { createMsgSend } from '../../src'
 
 describe('msgSend tests', () => {
   it('create message send', async () => {
     const message = createMsgSend(
-      'evmos18lw704zeyg5zs098lq7x6ypfkfjqlzzln5qh89',
-      'evmos1ndfagggdkgv9vc7wha5gj2zzrnyqd3r704lr4q',
-      '69420',
-      'aphoton',
+      'realio10hxw5znr0pz7w0gyvlczkcnjp2530e3kj2u4fc',
+      'realio1smp04p5qmzdnsex6hz72w3erlxch3q9hw9cwxk',
+      '50000',
+      'urio',
     )
     const expectedObject = {
-      from_address: 'evmos18lw704zeyg5zs098lq7x6ypfkfjqlzzln5qh89',
-      to_address: 'evmos1ndfagggdkgv9vc7wha5gj2zzrnyqd3r704lr4q',
+      from_address: 'realio10hxw5znr0pz7w0gyvlczkcnjp2530e3kj2u4fc',
+      to_address: 'realio1smp04p5qmzdnsex6hz72w3erlxch3q9hw9cwxk',
       amount: [
         {
-          denom: 'aphoton',
-          amount: '69420',
+          denom: 'urio',
+          amount: '50000',
         },
       ],
     }
