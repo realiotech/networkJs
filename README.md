@@ -1,2 +1,2 @@
-# networkJs
-Js library for Realio Network
+# realioJs
+Js / Ts library for Realio Network
