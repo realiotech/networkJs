@@ -12,3 +12,21 @@ export function createAnyMessage(msg: MessageGenerated) {
     value: msg.message.serializeBinary(),
   })
 }
+
+export function generateFee(
+  amount: string,
+  denom: string,
+  gas: string,
+  feePayer: string,
+) {
+  return {
+    amount: [
+      {
+        amount,
+        denom,
+      },
+    ],
+    gas,
+    feePayer,
+  }
+}
