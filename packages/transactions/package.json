@@ -1,7 +1,7 @@
 {
   "name": "@realiotech/transactions",
   "description": "Transactions generator for RealioNetwork",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,7 +19,7 @@
     "coverage": "jest --coverage"
   },
   "dependencies": {
-    "@realiotech/proto": "^1.0.0",
+    "@realiotech/proto": "^1.0.1",
     "@types/node": "^17.0.21",
     "link-module-alias": "^1.2.0",
     "shx": "^0.3.4"
