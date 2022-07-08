@@ -2,7 +2,7 @@ import {
   createMsgBeginRedelegate as protoMsgBeginRedelegate,
   createMsgDelegate as protoMsgDelegate,
   createMsgUndelegate as protoMsgUndelegate,
-  createMsgWithdrawDelegatorReward as protoeMsgWithdrawDelegatorReward,
+  createMsgWithdrawDelegatorReward as protoMsgWithdrawDelegatorReward,
   createMsgWithdrawValidatorCommission as protoMsgWithdrawValidatorCommission,
   MsgWithdrawDelegatorRewardProtoInterface,
   createTransaction,
@@ -142,7 +142,7 @@ export function createTxMsgWithdrawDelegatorReward(
   params: MsgWithdrawDelegatorRewardParams,
 ) {
   // Cosmos
-  const protoMessage = protoeMsgWithdrawDelegatorReward(
+  const protoMessage = protoMsgWithdrawDelegatorReward(
     sender.accountAddress,
     params.validatorAddress,
   )
@@ -181,7 +181,7 @@ export function createTxMsgMultipleWithdrawDelegatorReward(
   const protoMsgs: MsgWithdrawDelegatorRewardProtoInterface[] = []
   params.validatorAddresses.forEach((validator) => {
     protoMsgs.push(
-      protoeMsgWithdrawDelegatorReward(sender.accountAddress, validator),
+      protoMsgWithdrawDelegatorReward(sender.accountAddress, validator),
     )
   })
 
