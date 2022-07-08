@@ -22,7 +22,7 @@
     "@realiotech/address-generator": "^1.0.0",
     "@realiotech/proto": "^1.0.2",
     "@realiotech/provider": "^1.0.0",
-    "@realiotech/transactions": "^1.0.4",
+    "@realiotech/transactions": "^1.0.5",
     "@types/node": "^17.0.21",
     "link-module-alias": "^1.2.0",
     "shx": "^0.3.4"
