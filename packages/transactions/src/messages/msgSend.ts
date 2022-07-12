@@ -11,7 +11,7 @@ export interface MessageSendParams {
   denom: string
 }
 
-export function createMessageSend(
+export function createTxMessageSend(
   chain: Chain,
   sender: Sender,
   fee: Fee,

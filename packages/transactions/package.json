@@ -1,7 +1,7 @@
 {
   "name": "@realiotech/transactions",
   "description": "Transactions generator for RealioNetwork",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
