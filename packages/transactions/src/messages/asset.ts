@@ -14,7 +14,7 @@ export interface MsgCreateTokenParams {
   authorizationRequired: boolean
 }
 
-export function createTxMsgDelegate(
+export function createTxMsgCreateToken(
   chain: Chain,
   sender: Sender,
   fee: Fee,
