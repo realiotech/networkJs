@@ -11,7 +11,7 @@ export interface MsgCreateTokenParams {
   symbol: string
   total: number
   decimals: number
-  authoriztionRequired: boolean
+  authorizationRequired: boolean
 }
 
 export function createTxMsgDelegate(
@@ -29,7 +29,7 @@ export function createTxMsgDelegate(
     params.symbol,
     params.total,
     params.decimals,
-    params.authoriztionRequired,
+    params.authorizationRequired,
   )
   const tx = createTransaction(
     protoMessage,
