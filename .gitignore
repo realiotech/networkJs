@@ -30,3 +30,5 @@ build/Release
 .serverless/
 .yarn
 .idea
+*.d.ts
+*.d.ts.map
