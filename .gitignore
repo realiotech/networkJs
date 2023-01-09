@@ -32,3 +32,4 @@ build/Release
 .idea
 *.d.ts
 *.d.ts.map
+**/bundle/*

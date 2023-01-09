@@ -2,7 +2,9 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.ts',
-  devtool: 'inline-source-map',
+  experiments: {
+    outputModule: true,
+  },
   module: {
     rules: [
       {
@@ -12,11 +14,15 @@ module.exports = {
       },
     ],
   },
+  output: {
+    filename: 'realio-proto.bundle.js',
+    library: {
+      type: "module",
+    },
+    module: true,
+    path: path.resolve(__dirname, 'bundle'),
+  },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
-  },
-  output: {
-    filename: 'realio.js',
-    path: path.resolve(__dirname, 'bundle'),
   },
 };

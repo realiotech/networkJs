@@ -15,7 +15,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'realio-transactions.bundle.js',
+    filename: 'realiojs.bundle.js',
     library: {
       type: "module",
     },
