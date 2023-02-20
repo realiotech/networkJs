@@ -5,6 +5,7 @@
     "paths": {
       "@realiotech/address-generator": ["packages/address-generator/*"],
       "@realiotech/proto": ["packages/proto/*"],
+      "@realiotech/provider": ["packages/provider/*"],
       "@realiotech/transactions": ["packages/transactions/*"]
     }
   }
