@@ -9,7 +9,6 @@ import {
   createTransactionWithMultipleMessages,
 } from '@realiotech/proto'
 
-
 import { Chain, Fee, Sender } from './common'
 
 export interface MsgDelegateParams {
@@ -25,7 +24,6 @@ export function createTxMsgDelegate(
   memo: string,
   params: MsgDelegateParams,
 ) {
-
   // Cosmos
   const protoMessage = protoMsgDelegate(
     sender.accountAddress,
@@ -104,7 +102,6 @@ export function createTxMsgUndelegate(
   memo: string,
   params: MsgUndelegateParams,
 ) {
-
   // Cosmos
   const protoMessage = protoMsgUndelegate(
     sender.accountAddress,
@@ -176,7 +173,6 @@ export function createTxMsgMultipleWithdrawDelegatorReward(
   memo: string,
   params: MsgMultipleWithdrawDelegatorRewardParams,
 ) {
-
   // Cosmos
   const protoMsgs: MsgWithdrawDelegatorRewardProtoInterface[] = []
   params.validatorAddresses.forEach((validator) => {
@@ -215,7 +211,6 @@ export function createTxMsgWithdrawValidatorCommission(
   memo: string,
   params: MsgWithdrawValidatorCommissionParams,
 ) {
-
   // Cosmos
   const protoMessage = protoMsgWithdrawValidatorCommission(
     params.validatorAddress,

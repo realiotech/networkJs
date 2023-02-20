@@ -7,7 +7,14 @@ Protobuf files used to generate cosmos/realionetwork transactions.
 Requirements:
 
 - `brew install protoc`
-- `npm install -g protoc-gen-ts`
+- `npm install -g protoc-gen-ts` 
+
+### Note
+There seems to be a problem with typescript ~4.8.x and `protoc-gen-ts`.
+`protoc-gen-ts` lists the dependency with the semantic version of `"^4.3.4"`, and
+upon getting the version 4.8.x installed, the compiler was failing.
+On typescript `4.3.4` it works which is the quick solution for now.
+
 
 To generate the protobuf files on linux instead of OSX, remove the empty string after `sed -i ''`
 

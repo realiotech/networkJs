@@ -3,14 +3,13 @@ import {
   createTransaction,
 } from '@realiotech/proto'
 
-
 import { Chain, Fee, Sender } from './common'
 
 export interface MsgCreateTokenParams {
   name: string
   symbol: string
-  total: number
-  decimals: number
+  total: string
+  decimals: string
   authorizationRequired: boolean
 }
 
@@ -21,7 +20,6 @@ export function createTxMsgCreateToken(
   memo: string,
   params: MsgCreateTokenParams,
 ) {
-
   // Cosmos
   const protoMessage = protoMsgCreateToken(
     sender.accountAddress,
