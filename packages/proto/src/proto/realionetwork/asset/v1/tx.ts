@@ -10,18 +10,17 @@ export namespace realionetwork.asset.v1 {
     export class MsgCreateToken extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            creator?: string;
+            manager?: string;
             name?: string;
             symbol?: string;
             total?: string;
-            decimals?: string;
             authorizationRequired?: boolean;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
+                if ("manager" in data && data.manager != undefined) {
+                    this.manager = data.manager;
                 }
                 if ("name" in data && data.name != undefined) {
                     this.name = data.name;
@@ -32,18 +31,15 @@ export namespace realionetwork.asset.v1 {
                 if ("total" in data && data.total != undefined) {
                     this.total = data.total;
                 }
-                if ("decimals" in data && data.decimals != undefined) {
-                    this.decimals = data.decimals;
-                }
                 if ("authorizationRequired" in data && data.authorizationRequired != undefined) {
                     this.authorizationRequired = data.authorizationRequired;
                 }
             }
         }
-        get creator() {
+        get manager() {
             return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
         }
-        set creator(value: string) {
+        set manager(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
         get name() {
@@ -64,12 +60,6 @@ export namespace realionetwork.asset.v1 {
         set total(value: string) {
             pb_1.Message.setField(this, 4, value);
         }
-        get decimals() {
-            return pb_1.Message.getFieldWithDefault(this, 5, "") as string;
-        }
-        set decimals(value: string) {
-            pb_1.Message.setField(this, 5, value);
-        }
         get authorizationRequired() {
             return pb_1.Message.getFieldWithDefault(this, 6, false) as boolean;
         }
@@ -77,16 +67,15 @@ export namespace realionetwork.asset.v1 {
             pb_1.Message.setField(this, 6, value);
         }
         static fromObject(data: {
-            creator?: string;
+            manager?: string;
             name?: string;
             symbol?: string;
             total?: string;
-            decimals?: string;
             authorizationRequired?: boolean;
         }): MsgCreateToken {
             const message = new MsgCreateToken({});
-            if (data.creator != null) {
-                message.creator = data.creator;
+            if (data.manager != null) {
+                message.manager = data.manager;
             }
             if (data.name != null) {
                 message.name = data.name;
@@ -97,9 +86,6 @@ export namespace realionetwork.asset.v1 {
             if (data.total != null) {
                 message.total = data.total;
             }
-            if (data.decimals != null) {
-                message.decimals = data.decimals;
-            }
             if (data.authorizationRequired != null) {
                 message.authorizationRequired = data.authorizationRequired;
             }
@@ -107,15 +93,14 @@ export namespace realionetwork.asset.v1 {
         }
         toObject() {
             const data: {
-                creator?: string;
+                manager?: string;
                 name?: string;
                 symbol?: string;
                 total?: string;
-                decimals?: string;
                 authorizationRequired?: boolean;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
+            if (this.manager != null) {
+                data.manager = this.manager;
             }
             if (this.name != null) {
                 data.name = this.name;
@@ -126,9 +111,6 @@ export namespace realionetwork.asset.v1 {
             if (this.total != null) {
                 data.total = this.total;
             }
-            if (this.decimals != null) {
-                data.decimals = this.decimals;
-            }
             if (this.authorizationRequired != null) {
                 data.authorizationRequired = this.authorizationRequired;
             }
@@ -138,16 +120,14 @@ export namespace realionetwork.asset.v1 {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.creator.length)
-                writer.writeString(1, this.creator);
+            if (this.manager.length)
+                writer.writeString(1, this.manager);
             if (this.name.length)
                 writer.writeString(2, this.name);
             if (this.symbol.length)
                 writer.writeString(3, this.symbol);
             if (this.total.length)
                 writer.writeString(4, this.total);
-            if (this.decimals.length)
-                writer.writeString(5, this.decimals);
             if (this.authorizationRequired != false)
                 writer.writeBool(6, this.authorizationRequired);
             if (!w)
@@ -160,7 +140,7 @@ export namespace realionetwork.asset.v1 {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
+                        message.manager = reader.readString();
                         break;
                     case 2:
                         message.name = reader.readString();
@@ -170,9 +150,6 @@ export namespace realionetwork.asset.v1 {
                         break;
                     case 4:
                         message.total = reader.readString();
-                        break;
-                    case 5:
-                        message.decimals = reader.readString();
                         break;
                     case 6:
                         message.authorizationRequired = reader.readBool();
@@ -232,15 +209,15 @@ export namespace realionetwork.asset.v1 {
     export class MsgUpdateToken extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            creator?: string;
+            manager?: string;
             symbol?: string;
             authorizationRequired?: boolean;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
+                if ("manager" in data && data.manager != undefined) {
+                    this.manager = data.manager;
                 }
                 if ("symbol" in data && data.symbol != undefined) {
                     this.symbol = data.symbol;
@@ -250,10 +227,10 @@ export namespace realionetwork.asset.v1 {
                 }
             }
         }
-        get creator() {
+        get manager() {
             return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
         }
-        set creator(value: string) {
+        set manager(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
         get symbol() {
@@ -269,13 +246,13 @@ export namespace realionetwork.asset.v1 {
             pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
-            creator?: string;
+            manager?: string;
             symbol?: string;
             authorizationRequired?: boolean;
         }): MsgUpdateToken {
             const message = new MsgUpdateToken({});
-            if (data.creator != null) {
-                message.creator = data.creator;
+            if (data.manager != null) {
+                message.manager = data.manager;
             }
             if (data.symbol != null) {
                 message.symbol = data.symbol;
@@ -287,12 +264,12 @@ export namespace realionetwork.asset.v1 {
         }
         toObject() {
             const data: {
-                creator?: string;
+                manager?: string;
                 symbol?: string;
                 authorizationRequired?: boolean;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
+            if (this.manager != null) {
+                data.manager = this.manager;
             }
             if (this.symbol != null) {
                 data.symbol = this.symbol;
@@ -306,8 +283,8 @@ export namespace realionetwork.asset.v1 {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.creator.length)
-                writer.writeString(1, this.creator);
+            if (this.manager.length)
+                writer.writeString(1, this.manager);
             if (this.symbol.length)
                 writer.writeString(2, this.symbol);
             if (this.authorizationRequired != false)
@@ -322,7 +299,7 @@ export namespace realionetwork.asset.v1 {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
+                        message.manager = reader.readString();
                         break;
                     case 2:
                         message.symbol = reader.readString();
@@ -385,15 +362,15 @@ export namespace realionetwork.asset.v1 {
     export class MsgAuthorizeAddress extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            creator?: string;
+            manager?: string;
             symbol?: string;
             address?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
+                if ("manager" in data && data.manager != undefined) {
+                    this.manager = data.manager;
                 }
                 if ("symbol" in data && data.symbol != undefined) {
                     this.symbol = data.symbol;
@@ -403,10 +380,10 @@ export namespace realionetwork.asset.v1 {
                 }
             }
         }
-        get creator() {
+        get manager() {
             return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
         }
-        set creator(value: string) {
+        set manager(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
         get symbol() {
@@ -422,13 +399,13 @@ export namespace realionetwork.asset.v1 {
             pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
-            creator?: string;
+            manager?: string;
             symbol?: string;
             address?: string;
         }): MsgAuthorizeAddress {
             const message = new MsgAuthorizeAddress({});
-            if (data.creator != null) {
-                message.creator = data.creator;
+            if (data.manager != null) {
+                message.manager = data.manager;
             }
             if (data.symbol != null) {
                 message.symbol = data.symbol;
@@ -440,12 +417,12 @@ export namespace realionetwork.asset.v1 {
         }
         toObject() {
             const data: {
-                creator?: string;
+                manager?: string;
                 symbol?: string;
                 address?: string;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
+            if (this.manager != null) {
+                data.manager = this.manager;
             }
             if (this.symbol != null) {
                 data.symbol = this.symbol;
@@ -459,8 +436,8 @@ export namespace realionetwork.asset.v1 {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.creator.length)
-                writer.writeString(1, this.creator);
+            if (this.manager.length)
+                writer.writeString(1, this.manager);
             if (this.symbol.length)
                 writer.writeString(2, this.symbol);
             if (this.address.length)
@@ -475,7 +452,7 @@ export namespace realionetwork.asset.v1 {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
+                        message.manager = reader.readString();
                         break;
                     case 2:
                         message.symbol = reader.readString();
@@ -538,15 +515,15 @@ export namespace realionetwork.asset.v1 {
     export class MsgUnAuthorizeAddress extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            creator?: string;
+            manager?: string;
             symbol?: string;
             address?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
+                if ("manager" in data && data.manager != undefined) {
+                    this.manager = data.manager;
                 }
                 if ("symbol" in data && data.symbol != undefined) {
                     this.symbol = data.symbol;
@@ -556,10 +533,10 @@ export namespace realionetwork.asset.v1 {
                 }
             }
         }
-        get creator() {
+        get manager() {
             return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
         }
-        set creator(value: string) {
+        set manager(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
         get symbol() {
@@ -575,13 +552,13 @@ export namespace realionetwork.asset.v1 {
             pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
-            creator?: string;
+            manager?: string;
             symbol?: string;
             address?: string;
         }): MsgUnAuthorizeAddress {
             const message = new MsgUnAuthorizeAddress({});
-            if (data.creator != null) {
-                message.creator = data.creator;
+            if (data.manager != null) {
+                message.manager = data.manager;
             }
             if (data.symbol != null) {
                 message.symbol = data.symbol;
@@ -593,12 +570,12 @@ export namespace realionetwork.asset.v1 {
         }
         toObject() {
             const data: {
-                creator?: string;
+                manager?: string;
                 symbol?: string;
                 address?: string;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
+            if (this.manager != null) {
+                data.manager = this.manager;
             }
             if (this.symbol != null) {
                 data.symbol = this.symbol;
@@ -612,8 +589,8 @@ export namespace realionetwork.asset.v1 {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.creator.length)
-                writer.writeString(1, this.creator);
+            if (this.manager.length)
+                writer.writeString(1, this.manager);
             if (this.symbol.length)
                 writer.writeString(2, this.symbol);
             if (this.address.length)
@@ -628,7 +605,7 @@ export namespace realionetwork.asset.v1 {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
+                        message.manager = reader.readString();
                         break;
                     case 2:
                         message.symbol = reader.readString();
@@ -691,7 +668,6 @@ export namespace realionetwork.asset.v1 {
     export class MsgTransferToken extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            creator?: string;
             symbol?: string;
             from?: string;
             to?: string;
@@ -700,9 +676,6 @@ export namespace realionetwork.asset.v1 {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
-                }
                 if ("symbol" in data && data.symbol != undefined) {
                     this.symbol = data.symbol;
                 }
@@ -717,47 +690,37 @@ export namespace realionetwork.asset.v1 {
                 }
             }
         }
-        get creator() {
+        get symbol() {
             return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
         }
-        set creator(value: string) {
+        set symbol(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
-        get symbol() {
+        get from() {
             return pb_1.Message.getFieldWithDefault(this, 2, "") as string;
         }
-        set symbol(value: string) {
+        set from(value: string) {
             pb_1.Message.setField(this, 2, value);
         }
-        get from() {
+        get to() {
             return pb_1.Message.getFieldWithDefault(this, 3, "") as string;
         }
-        set from(value: string) {
+        set to(value: string) {
             pb_1.Message.setField(this, 3, value);
         }
-        get to() {
+        get amount() {
             return pb_1.Message.getFieldWithDefault(this, 4, "") as string;
         }
-        set to(value: string) {
+        set amount(value: string) {
             pb_1.Message.setField(this, 4, value);
         }
-        get amount() {
-            return pb_1.Message.getFieldWithDefault(this, 5, "") as string;
-        }
-        set amount(value: string) {
-            pb_1.Message.setField(this, 5, value);
-        }
         static fromObject(data: {
-            creator?: string;
             symbol?: string;
             from?: string;
             to?: string;
             amount?: string;
         }): MsgTransferToken {
             const message = new MsgTransferToken({});
-            if (data.creator != null) {
-                message.creator = data.creator;
-            }
             if (data.symbol != null) {
                 message.symbol = data.symbol;
             }
@@ -774,15 +737,11 @@ export namespace realionetwork.asset.v1 {
         }
         toObject() {
             const data: {
-                creator?: string;
                 symbol?: string;
                 from?: string;
                 to?: string;
                 amount?: string;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
-            }
             if (this.symbol != null) {
                 data.symbol = this.symbol;
             }
@@ -801,16 +760,14 @@ export namespace realionetwork.asset.v1 {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.creator.length)
-                writer.writeString(1, this.creator);
             if (this.symbol.length)
-                writer.writeString(2, this.symbol);
+                writer.writeString(1, this.symbol);
             if (this.from.length)
-                writer.writeString(3, this.from);
+                writer.writeString(2, this.from);
             if (this.to.length)
-                writer.writeString(4, this.to);
+                writer.writeString(3, this.to);
             if (this.amount.length)
-                writer.writeString(5, this.amount);
+                writer.writeString(4, this.amount);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -821,18 +778,15 @@ export namespace realionetwork.asset.v1 {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
-                        break;
-                    case 2:
                         message.symbol = reader.readString();
                         break;
-                    case 3:
+                    case 2:
                         message.from = reader.readString();
                         break;
-                    case 4:
+                    case 3:
                         message.to = reader.readString();
                         break;
-                    case 5:
+                    case 4:
                         message.amount = reader.readString();
                         break;
                     default: reader.skipField();
