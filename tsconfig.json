@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "realiojs": ["packages/realiojs"],
       "@realiotech/address-generator": ["packages/address-generator/*"],
       "@realiotech/proto": ["packages/proto/*"],
       "@realiotech/provider": ["packages/provider/*"],
