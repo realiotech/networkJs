@@ -21,9 +21,9 @@ export function createMsgCreateToken(
 }
 
 export function createMsgUpdateToken(
-    manager: string,
-    symbol: string,
-    authorizationRequired: boolean,
+  manager: string,
+  symbol: string,
+  authorizationRequired: boolean,
 ) {
   const message = new asset.realionetwork.asset.v1.MsgUpdateToken({
     manager,
@@ -37,9 +37,9 @@ export function createMsgUpdateToken(
 }
 
 export function createMsgAuthorizeAddress(
-    manager: string,
-    symbol: string,
-    address: string,
+  manager: string,
+  symbol: string,
+  address: string,
 ) {
   const message = new asset.realionetwork.asset.v1.MsgAuthorizeAddress({
     manager,
@@ -53,9 +53,9 @@ export function createMsgAuthorizeAddress(
 }
 
 export function createMsgUnAuthorizeAddress(
-    manager: string,
-    symbol: string,
-    address: string,
+  manager: string,
+  symbol: string,
+  address: string,
 ) {
   const message = new asset.realionetwork.asset.v1.MsgUnAuthorizeAddress({
     manager,
@@ -69,10 +69,10 @@ export function createMsgUnAuthorizeAddress(
 }
 
 export function createMsgTransferToken(
-    from: string,
-    to: string,
-    symbol: string,
-    amount: string,
+  from: string,
+  to: string,
+  symbol: string,
+  amount: string,
 ) {
   const message = new asset.realionetwork.asset.v1.MsgTransferToken({
     from,
