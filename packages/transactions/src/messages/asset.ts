@@ -50,10 +50,9 @@ export function createTxMsgCreateToken(
 }
 
 export interface MsgUpdateTokenParams {
-    symbol: string
-    authorizationRequired: boolean
-    manager: string
-
+  symbol: string
+  authorizationRequired: boolean
+  manager: string
 }
 export function createTxMsgUpdateToken(
   chain: Chain,
@@ -64,9 +63,9 @@ export function createTxMsgUpdateToken(
 ) {
   // Cosmos
   const protoMessage = protoMsgUpdateToken(
-      params.manager,
-      params.symbol,
-      params.authorizationRequired,
+    params.manager,
+    params.symbol,
+    params.authorizationRequired,
   )
   const tx = createTransaction(
     protoMessage,
@@ -87,9 +86,9 @@ export function createTxMsgUpdateToken(
 }
 
 export interface MsgAuthorizeAddressParams {
-  symbol: string,
-  manager: string,
-  address: string,
+  symbol: string
+  manager: string
+  address: string
 }
 export function createTxAuthorizeAddress(
   chain: Chain,
@@ -100,9 +99,9 @@ export function createTxAuthorizeAddress(
 ) {
   // Cosmos
   const protoMessage = protoMsgAuthorizeAddress(
-      params.manager,
-      params.symbol,
-      params.address,
+    params.manager,
+    params.symbol,
+    params.address,
   )
   const tx = createTransaction(
     protoMessage,
@@ -131,9 +130,9 @@ export function createTxUnAuthorizeAddress(
 ) {
   // Cosmos
   const protoMessage = protoMsgUnAuthorizeAddress(
-      params.manager,
-      params.symbol,
-      params.address,
+    params.manager,
+    params.symbol,
+    params.address,
   )
   const tx = createTransaction(
     protoMessage,
@@ -154,10 +153,10 @@ export function createTxUnAuthorizeAddress(
 }
 
 export interface MsgTransferTokenParams {
-  from: string,
-  to: string,
-  symbol: string,
-  amount: string,
+  from: string
+  to: string
+  symbol: string
+  amount: string
 }
 
 export function createTxMsgTransferToken(

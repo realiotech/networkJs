@@ -1,7 +1,7 @@
 {
   "name": "@realiotech/transactions",
   "description": "Transactions generator for RealioNetwork",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     "postinstall": "shx mkdir -p dist && link-module-alias",
     "build": "tsc --build tsconfig.build.json && link-module-alias",
     "clean": "tsc --build tsconfig.build.json --clean  && shx rm -rf coverage *.log junit.xml dist && jest --clearCache",
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "coverage": "jest --coverage"
   },
   "dependencies": {

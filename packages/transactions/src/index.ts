@@ -1,3 +1,5 @@
-export * from './messages/msgSend'
+export * from './messages/msgSend.js'
 export * from './messages/staking'
 export * from './messages/asset'
+export * from './messages/gov'
+export * from './messages/ibcMsgTransfer'
