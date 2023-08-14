@@ -1,6 +1,6 @@
 import { protoTxNamespace } from '@realiotech/proto'
 
-export interface EIPToSign {
+export interface EIP712ToSign {
   types: object
   primaryType: string
   domain: {
@@ -40,5 +40,5 @@ export interface TxGenerated {
     authInfo: protoTxNamespace.txn.AuthInfo
     signBytes: string
   }
-  eipToSign: EIPToSign
+  eipToSign: EIP712ToSign | undefined
 }
