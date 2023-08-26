@@ -19,7 +19,7 @@
     "coverage": "jest --coverage"
   },
   "dependencies": {
-    "@realiotech/address-generator": "^1.0.1",
+    "@realiotech/address-generator": "~1.0.1",
     "@realiotech/proto": "~2.3.0",
     "@realiotech/provider": "~2.0.1",
     "@realiotech/transactions": "~2.4.0",
