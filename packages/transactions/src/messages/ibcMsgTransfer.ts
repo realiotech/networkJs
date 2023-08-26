@@ -1,6 +1,7 @@
 import {
   createIBCMsgTransfer as protoCreateIBCMsgTransfer,
   createTransaction,
+  ETH_SECP256K1,
 } from '@realiotech/proto'
 
 import { TxGenerated, Chain, Fee, Sender } from './common'
@@ -26,6 +27,7 @@ export function createTxIBCMsgTransfer(
   fee: Fee,
   memo: string,
   params: MessageIBCMsgTransfer,
+  algo: string = ETH_SECP256K1,
 ): TxGenerated {
   // Cosmos
   const msgCosmos = protoCreateIBCMsgTransfer(
@@ -49,6 +51,7 @@ export function createTxIBCMsgTransfer(
     sender.sequence,
     sender.accountNumber,
     chain.cosmosChainId,
+    algo,
   )
 
   return {
