@@ -7,8 +7,8 @@ import * as secp from '../proto/cosmos/crypto/secp256k1/keys'
 
 import { createAnyMessage, MessageGenerated } from '../messages/utils'
 
-const ETH_SECP256K1 =  'ethsecp256k1';
-const SECP256K1 = 'secp256k1';
+export const ETH_SECP256K1 = 'ethsecp256k1'
+export const SECP256K1 = 'secp256k1'
 
 export const SIGN_DIRECT =
   signing.cosmos.tx.signing.v1beta1.SignMode.SIGN_MODE_DIRECT
