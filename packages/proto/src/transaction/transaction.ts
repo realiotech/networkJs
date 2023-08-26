@@ -3,8 +3,12 @@ import * as tx from '../proto/cosmos/tx/v1beta1/tx'
 import * as signing from '../proto/cosmos/tx/signing/v1beta1/signing'
 import * as coin from '../proto/cosmos/base/v1beta1/coin'
 import * as eth from '../proto/ethermint/crypto/v1/ethsecp256k1/keys'
+import * as secp from '../proto/cosmos/crypto/secp256k1/keys'
 
 import { createAnyMessage, MessageGenerated } from '../messages/utils'
+
+const ETH_SECP256K1 =  'ethsecp256k1';
+const SECP256K1 = 'secp256k1';
 
 export const SIGN_DIRECT =
   signing.cosmos.tx.signing.v1beta1.SignMode.SIGN_MODE_DIRECT
@@ -51,12 +55,26 @@ export function createSignerInfo(
   publicKey: Uint8Array,
   sequence: number,
   mode: number,
+  algo: string = ETH_SECP256K1,
 ) {
-  const pubkey: MessageGenerated = {
-    message: new eth.ethermint.crypto.v1.ethsecp256k1.PubKey({
-      key: publicKey,
-    }),
-    path: 'ethermint.crypto.v1.ethsecp256k1.PubKey',
+
+  let pubkey: MessageGenerated
+
+  if (algo === SECP256K1) {
+    pubkey = {
+      message: new secp.cosmos.crypto.secp256k1.PubKey({
+        key: publicKey,
+      }),
+      path: 'cosmos.crypto.secp256k1.PubKey',
+    }
+  } else {
+    // default to ETH_SECP256K1 because realio network accounts have this in the prototype
+    pubkey = {
+      message: new eth.ethermint.crypto.v1.ethsecp256k1.PubKey({
+        key: publicKey,
+      }),
+      path: 'ethermint.crypto.v1.ethsecp256k1.PubKey',
+    }
   }
 
   const signerInfo = new tx.cosmos.tx.v1beta1.SignerInfo({
@@ -107,6 +125,7 @@ export function createTransactionWithMultipleMessages(
   sequence: number,
   accountNumber: number,
   chainId: string,
+  algo: string = ETH_SECP256K1
 ) {
   const body = createBodyWithMultipleMessages(messages, memo)
   const feeMessage = createFee(fee, denom, gasLimit)
@@ -117,6 +136,7 @@ export function createTransactionWithMultipleMessages(
     new Uint8Array(pubKeyDecoded),
     sequence,
     LEGACY_AMINO,
+    algo
   )
 
   const authInfoAmino = createAuthInfo(signInfoAmino, feeMessage)
@@ -137,6 +157,7 @@ export function createTransactionWithMultipleMessages(
     new Uint8Array(pubKeyDecoded),
     sequence,
     SIGN_DIRECT,
+    algo
   )
 
   const authInfoDirect = createAuthInfo(signInfoDirect, feeMessage)
@@ -176,6 +197,7 @@ export function createTransaction(
   sequence: number,
   accountNumber: number,
   chainId: string,
+  algo: string = ETH_SECP256K1,
 ) {
   return createTransactionWithMultipleMessages(
     [message],
@@ -187,5 +209,6 @@ export function createTransaction(
     sequence,
     accountNumber,
     chainId,
+    algo
   )
 }
