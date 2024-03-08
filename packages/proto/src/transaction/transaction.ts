@@ -57,7 +57,6 @@ export function createSignerInfo(
   mode: number,
   algo: string = ETH_SECP256K1,
 ) {
-
   let pubkey: MessageGenerated
 
   if (algo === SECP256K1) {
